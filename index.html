@@ -25,11 +25,42 @@
                 <h5>Search for a City:</h5>
                 <input id="city" class="form-control" type="enter-city" placeholder="Enter City Name">
                 <button type="button" class="bg-primary btn-block mt-2 rounded border-0">Search</button>
-                <ul class="past-searches list-group"  id="past-searches">houston</ul>
+                <div class="past-search-btn pt-2">
+                    <button class="past-searches list-group btn-block mt-2 border-0" id="past-searches"></button>
+                </div>
             </form>
-            
+
+            <!--Section where current city forecast will show-->
+            <div class="row">
+                <div class="col-lg-12 mt-3" id="current-city-forecast">
+                    <div class="card-body border border-secondary">
+                        <h2 id="current-city"></h2>
+                        <p id="temp"></p>
+                        <p id="wind"></p>
+                        <p id="humidity"></p>
+                        <p id="uv index"></p>
+                    </div>
+                </div>
+            </div>
+            <!--section where the five-day forcast for the current city will show-->
+            <div class="row">
+                <div class="col-lg-9" id="five-day-forecast">
+                    <h2>5-Day Forecast: </h2>
+                </div>
+                <div id="fiveday-cards" class="row">
+                    <div class="col" id="day1"></div>
+                    <div class="col" id="day2"></div>
+                    <div class="col" id="day3"></div>
+                    <div class="col" id="day4"></div>
+                    <div class="col" id="day5"></div>
+
+                </div>
+
+            </div>
+
 
         </div>
+
 
     </main>
 
