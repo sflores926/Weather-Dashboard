@@ -23,7 +23,7 @@
             <!--Section where you will search and where past searches will be kept-->
             <form class="col-lg-3 m-3">
                 <h5>Search for a City:</h5>
-                <input id="city" class="form-control" type="enter-city" placeholder="Enter City Name">
+                <input id="city-search" class="form-control" type="enter-city" placeholder="Enter City Name">
                 <button type="button" class="bg-primary btn-block mt-2 rounded border-0">Search</button>
                 <div class="past-search-btn pt-2">
                     <button class="past-searches list-group btn-block mt-2 border-0" id="past-searches"></button>
@@ -35,10 +35,11 @@
                 <div class="col-lg-12 mt-3" id="current-city-forecast">
                     <div class="card-body border border-secondary">
                         <h2 id="current-city"></h2>
+                        <img id="image" alt="">
                         <p id="temp"></p>
                         <p id="wind"></p>
                         <p id="humidity"></p>
-                        <p id="uv index"></p>
+                        <p id="uv-index"></p>
                     </div>
                 </div>
             </div>
@@ -48,20 +49,15 @@
                     <h2>5-Day Forecast: </h2>
                 </div>
                 <div id="fiveday-cards" class="row">
-                    <div class="col" id="day1"></div>
-                    <div class="col" id="day2"></div>
-                    <div class="col" id="day3"></div>
-                    <div class="col" id="day4"></div>
-                    <div class="col" id="day5"></div>
+                    <div class="col-md-3 m-1 bg-primary text-white" id="daily"></div>
+                    <div class="col-md-3 m-1 bg-primary text-white" id="daily"></div>
+                    <div class="col-md-3 m-1 bg-primary text-white" id="daily"></div>
+                    <div class="col-md-3 m-1 bg-primary text-white" id="daily"></div>
+                    <div class="col-md-3 m-1 bg-primary text-white" id="daily"></div>
 
                 </div>
-
             </div>
-
-
         </div>
-
-
     </main>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
