@@ -24,7 +24,8 @@ function getWeather(city) {
             currentWeather(data, city);
         })
 }
-getWeather("houston");
+
+// getWeather("houston");
 
 function currentWeather(weather, citySearched) {
     currentCityForecast.textContent = "";
@@ -33,11 +34,33 @@ function currentWeather(weather, citySearched) {
     var date = document.createElement("span");
     date.textContent = "(" + moment(weather.dt.value).format("MMMM Do, YYYY") + ")";
     currentCity.appendChild(date);
-    let weatherIcon = response.data.weather[0].icon;
+    var weatherIcon = response.data.weather[0].icon;
     image.setAttribute("src", "https://openwethermap.org/img/wn/" + weatherIcon + "@02.png");
     temperature.innerHTML = "Temp: " + weather.main.temp + " °F";
     wind.innerHTML = "Wind: " + weather.wind.speed + " MPH";
     humidity.innerHTML = "Humidity: " + weather.main.humidity + "%";
 
+    var lat = weather.coord.lat;
+    var lon = weather.coord.lon;
+    uvIndex(lat,lon);
+}
 
+function uvIndex(lat, lon){
+    var apiKey = "05027a18faadbe64fa845a2851972b89";
+    var apiUrl = 'https://api.openweathermap.org/data/2.5/uvi?lat=' +  lat + '&lon=' + lon + '&appid=' + apiKey;
+
+    fetch(apiUrl)
+    .then(function(response){
+        response.json()
+        .then(function(data){
+            displayIndex(data)
+        });
+    })
+
+    function displayIndex(index){
+        var uvIndexVal = document.createElement("span");
+        uvIndex.index.textContent = index.value;
+
+        if()
+    }
 }
