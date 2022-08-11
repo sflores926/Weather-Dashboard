@@ -7,6 +7,9 @@ var temperature = document.getElementById("temp");
 var wind = document.getElementById("wind");
 var humidity = document.getElementById("humidity");
 var uvIndex = document.getElementById("uv-index");
+var searchBtn = document.getElementById("serach-btn")
+
+
 
 
 //function to retrieve weather 
@@ -59,8 +62,18 @@ function uvIndex(lat, lon){
 
     function displayIndex(index){
         var uvIndexVal = document.createElement("span");
-        uvIndex.index.textContent = index.value;
+        // uvIndex.index.textContent = index.value;
 
-        if()
+        if(index.value <= 2){
+            uvIndexVal.setAttribute("class", "badge badge-success");
+        } else if (index.value < 8 ){
+            uvIndexVal.setAttribute("class", "badge badge-warning");
+        } else if (index.value > 7){
+            uvIndexVal.setAttribute("class", "badge badge-danger");
+        }
+        uvIndexVal.innerHTML = index.value;
+        uvIndex.innerHTML = "UV Index: ";
+        uvIndex.appendChild(uvIndexVal);
+
     }
 }
