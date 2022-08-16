@@ -1,9 +1,9 @@
 function weatherDash() {
     //assigned variables
     var citySearched = document.getElementById("city-search");
-    var currentCityForecast = document.getElementById("current-city-forecast");
+    // var currentCityForecast = document.getElementById("current-city-forecast");
     var currentCity = document.getElementById("current-city");
-    var image = document.getElementById("image");
+    // var image = document.getElementById("image");
     var temperature = document.getElementById("temp");
     var wind = document.getElementById("wind");
     var humidity = document.getElementById("humidity");
@@ -109,12 +109,20 @@ function weatherDash() {
     }
 
     function displayFiveDay(weather) {
-        console.log(weather)
+        console.log(weather.list[0])
 
+        var day1 = document.getElementById("day1");
         
-        for(let i = 5; forecast.length; i++){
-           var forecast = weather.list; 
-        }
+        day1.innerHTML= weather.dt
+
+
+        // day1.innerHTML = weather.list[0].wind.speed
+
+
+        // var forecast = weather.list[0]; 
+        // for(let i = 5; forecast.length; i++){
+           
+        // }
 
         // forecastCont[i].textContent = "";
 
@@ -143,6 +151,8 @@ function weatherDash() {
         localStorage.setItem("search", JSON.stringify(pastSearches));
         searchHistory();
     })
+
+
 
     function searchHistory() {
         history.innerHTML = "";
