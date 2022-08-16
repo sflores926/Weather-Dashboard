@@ -112,8 +112,10 @@ function weatherDash() {
         console.log(weather.list[0])
 
         var day1 = document.getElementById("day1");
-        
-        day1.innerHTML= weather.dt
+        var forecastDate = document.createElement('h3');
+        forecastDate.textContent = moment.unix(weather.dt).format("MMM D, YYYY");
+        // day1.innerHTML= weather.dt
+        day1.innerHTML = forecastDate;
 
 
         // day1.innerHTML = weather.list[0].wind.speed
