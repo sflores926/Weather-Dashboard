@@ -13,6 +13,31 @@ function weatherDash() {
     var history = document.getElementById("past-searches");
     var clearBtn = document.getElementById("clearBtn");
     var fiveDayCards = document.getElementById("fiveday-cards");
+    var forecastTime1 = document.getElementById("time1");
+    var forecastImg1 = document.getElementById("image1");
+    var forecastWind1 = document.getElementById("wind1");
+    var forecastTemp1 = document.getElementById("temp1");
+    var forecastHum1 = document.getElementById("hum1");
+    var forecastTime2 = document.getElementById("time2");
+    var forecastImg2 = document.getElementById("image2");
+    var forecastWind2 = document.getElementById("wind2");
+    var forecastTemp2 = document.getElementById("temp2");
+    var forecastHum2 = document.getElementById("hum2");
+    var forecastTime3 = document.getElementById("time3");
+    var forecastImg3 = document.getElementById("image3");
+    var forecastWind3 = document.getElementById("wind3");
+    var forecastTemp3 = document.getElementById("temp3");
+    var forecastHum3 = document.getElementById("hum3");
+    var forecastTime4 = document.getElementById("time4");
+    var forecastImg4 = document.getElementById("image4");
+    var forecastWind4 = document.getElementById("wind4");
+    var forecastTemp4 = document.getElementById("temp4");
+    var forecastHum4 = document.getElementById("hum4");
+    var forecastTime5 = document.getElementById("time5");
+    var forecastImg5 = document.getElementById("image5");
+    var forecastWind5 = document.getElementById("wind5");
+    var forecastTemp5 = document.getElementById("temp5");
+    var forecastHum5 = document.getElementById("hum5");
 
 
 
@@ -112,18 +137,51 @@ function weatherDash() {
         console.log(weather.list[0])
 
         var day1 = document.getElementById("day1");
-        var forecastDate = document.createElement('h3');
-        forecastDate.textContent = moment.unix(weather.dt).format("MMM D, YYYY");
-        // day1.innerHTML= weather.dt
-        day1.innerHTML = forecastDate;
 
-
+        forecastTime1.innerHTML = moment.unix(weather.list[0].dt).format("MMM D, YYYY");
+        // forecastImg1.innerHTML =  weather.list[0].icon
+        forecastTemp1.innerHTML = "Temp: " + weather.list[0].main.temp + " °F";
+        forecastWind1.innerHTML = "Wind: " + weather.list[0].wind.speed + " MPH";
+        forecastHum1.innerHTML =  "Humidity: " + weather.list[0].main.humidity + "%";
+        // forecastWind.textContent = weather.list[0].wind.speed
         // day1.innerHTML = weather.list[0].wind.speed
+
+        var day2 = document.getElementById("day2");
+
+        forecastTime2.innerHTML = moment.unix(weather.list[1].dt).format("MMM D, YYYY");
+        // forecastImg2.innerHTML =  weather.list[1].icon
+        forecastTemp2.innerHTML = "Temp: " + weather.list[1].main.temp + " °F";
+        forecastWind2.innerHTML = "Wind: " + weather.list[1].wind.speed + " MPH";
+        forecastHum2.innerHTML =  "Humidity: " + weather.list[1].main.humidity + "%";
+
+        var day3 = document.getElementById("day3");
+
+        forecastTime3.innerHTML = moment.unix(weather.list[2].dt).format("MMM D, YYYY");
+        // forecastImg3.innerHTML =  weather.list[2].icon
+        forecastTemp3.innerHTML = "Temp: " + weather.list[2].main.temp + " °F";
+        forecastWind3.innerHTML = "Wind: " + weather.list[2].wind.speed + " MPH";
+        forecastHum3.innerHTML =  "Humidity: " + weather.list[2].main.humidity + "%";
+
+        var day4 = document.getElementById("day4");
+
+        forecastTime4.innerHTML = moment.unix(weather.list[3].dt).format("MMM D, YYYY");
+        // forecastImg4.innerHTML =  weather.list[3].icon
+        forecastTemp4.innerHTML = "Temp: " + weather.list[3].main.temp + " °F";
+        forecastWind4.innerHTML = "Wind: " + weather.list[3].wind.speed + " MPH";
+        forecastHum4.innerHTML =  "Humidity: " + weather.list[3].main.humidity + "%";
+
+        var day5 = document.getElementById("day5");
+
+        forecastTime5.innerHTML = moment.unix(weather.list[4].dt).format("MMM D, YYYY");
+        // forecastImg5.innerHTML =  weather.list[4].icon
+        forecastTemp5.innerHTML = "Temp: " + weather.list[4].main.temp + " °F";
+        forecastWind5.innerHTML = "Wind: " + weather.list[4].wind.speed + " MPH";
+        forecastHum5.innerHTML =  "Humidity: " + weather.list[4].main.humidity + "%";
 
 
         // var forecast = weather.list[0]; 
         // for(let i = 5; forecast.length; i++){
-           
+
         // }
 
         // forecastCont[i].textContent = "";
