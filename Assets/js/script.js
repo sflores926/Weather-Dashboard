@@ -60,7 +60,7 @@ function weatherDash() {
     }
 
     //  getWeather("houston");
-
+    //function to display weather
     function currentWeather(weather, citySearched) {
         // currentCityForecast.textContent = "";
         currentCity.textContent = citySearched;
@@ -84,6 +84,7 @@ function weatherDash() {
         // fiveDayWeather(lat, lon);
     }
 
+    //function to retrieve uv index
     function getuvIndex(lat, lon) {
         var apiKey = "05027a18faadbe64fa845a2851972b89";
         var apiUrl = 'https://api.openweathermap.org/data/2.5/uvi?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey;
@@ -98,6 +99,7 @@ function weatherDash() {
                     });
             })
 
+        //function to display uv index
         function displayIndex(index) {
             var uvIndexVal = document.createElement("span");
             // uvIndex.index.textContent = index.value;
@@ -116,6 +118,7 @@ function weatherDash() {
         }
     }
 
+    //function to retrieve 5 day forecast
     function fiveDayWeather(city) {
         var apiKey = "05027a18faadbe64fa845a2851972b89";
         // var apiUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey;
@@ -133,52 +136,66 @@ function weatherDash() {
             });
     }
 
+
+    //function to display 5 day forecast
     function displayFiveDay(weather) {
         console.log(weather.list)
 
         var day1 = document.getElementById("day1");
 
         forecastTime1.innerHTML = moment.unix(weather.list[8].dt).format("MMM D, YYYY");
-        // forecastImg1.innerHTML('src', "https://openweathermap.org/img/wn/" + weather.list[0].icon + "@2x.png");
-      
-
+        var forecastWeatherEl = document.createElement("img");
+        forecastWeatherEl.setAttribute("src", "https://openweathermap.org/img/wn/" + weather.list[8].weather[0].icon + "@2x.png");
+        forecastWeatherEl.setAttribute("alt", weather.list[8].weather[0].description);
+        forecastImg1.append(forecastWeatherEl);
         forecastTemp1.innerHTML = "Temp: " + weather.list[8].main.temp + " °F";
         forecastWind1.innerHTML = "Wind: " + weather.list[8].wind.speed + " MPH";
-        forecastHum1.innerHTML =  "Humidity: " + weather.list[8].main.humidity + "%";
-        // forecastWind.textContent = weather.list[0].wind.speed
-        // day1.innerHTML = weather.list[0].wind.speed
+        forecastHum1.innerHTML = "Humidity: " + weather.list[8].main.humidity + "%";
+   
 
         var day2 = document.getElementById("day2");
 
         forecastTime2.innerHTML = moment.unix(weather.list[16].dt).format("MMM D, YYYY");
-        // forecastImg2.innerHTML =  weather.list[1].icon
+        var forecastWeatherEl2 = document.createElement("img");
+        forecastWeatherEl2.setAttribute("src", "https://openweathermap.org/img/wn/" + weather.list[16].weather[0].icon + "@2x.png");
+        forecastWeatherEl2.setAttribute("alt", weather.list[16].weather[0].description);
+        forecastImg2.append(forecastWeatherEl2);
         forecastTemp2.innerHTML = "Temp: " + weather.list[16].main.temp + " °F";
         forecastWind2.innerHTML = "Wind: " + weather.list[16].wind.speed + " MPH";
-        forecastHum2.innerHTML =  "Humidity: " + weather.list[16].main.humidity + "%";
+        forecastHum2.innerHTML = "Humidity: " + weather.list[16].main.humidity + "%";
 
         var day3 = document.getElementById("day3");
 
         forecastTime3.innerHTML = moment.unix(weather.list[24].dt).format("MMM D, YYYY");
-        // forecastImg3.innerHTML =  weather.list[2].icon
+        var forecastWeatherEl3 = document.createElement("img");
+        forecastWeatherEl3.setAttribute("src", "https://openweathermap.org/img/wn/" + weather.list[24].weather[0].icon + "@2x.png");
+        forecastWeatherEl3.setAttribute("alt", weather.list[24].weather[0].description);
+        forecastImg3.append(forecastWeatherEl3);
         forecastTemp3.innerHTML = "Temp: " + weather.list[24].main.temp + " °F";
         forecastWind3.innerHTML = "Wind: " + weather.list[24].wind.speed + " MPH";
-        forecastHum3.innerHTML =  "Humidity: " + weather.list[24].main.humidity + "%";
+        forecastHum3.innerHTML = "Humidity: " + weather.list[24].main.humidity + "%";
 
         var day4 = document.getElementById("day4");
 
         forecastTime4.innerHTML = moment.unix(weather.list[32].dt).format("MMM D, YYYY");
-        // forecastImg4.innerHTML =  weather.list[3].icon
+        var forecastWeatherEl4 = document.createElement("img");
+        forecastWeatherEl4.setAttribute("src", "https://openweathermap.org/img/wn/" + weather.list[32].weather[0].icon + "@2x.png");
+        forecastWeatherEl4.setAttribute("alt", weather.list[32].weather[0].description);
+        forecastImg4.append(forecastWeatherEl4);
         forecastTemp4.innerHTML = "Temp: " + weather.list[32].main.temp + " °F";
         forecastWind4.innerHTML = "Wind: " + weather.list[32].wind.speed + " MPH";
-        forecastHum4.innerHTML =  "Humidity: " + weather.list[32].main.humidity + "%";
+        forecastHum4.innerHTML = "Humidity: " + weather.list[32].main.humidity + "%";
 
         var day5 = document.getElementById("day5");
 
         forecastTime5.innerHTML = moment.unix(weather.list[38].dt).format("MMM D, YYYY");
-        // forecastImg5.innerHTML =  weather.list[4].icon
+        var forecastWeatherEl5 = document.createElement("img");
+        forecastWeatherEl5.setAttribute("src", "https://openweathermap.org/img/wn/" + weather.list[38].weather[0].icon + "@2x.png");
+        forecastWeatherEl5.setAttribute("alt", weather.list[38].weather[0].description);
+        forecastImg5.append(forecastWeatherEl5);
         forecastTemp5.innerHTML = "Temp: " + weather.list[38].main.temp + " °F";
         forecastWind5.innerHTML = "Wind: " + weather.list[38].wind.speed + " MPH";
-        forecastHum5.innerHTML =  "Humidity: " + weather.list[38].main.humidity + "%";
+        forecastHum5.innerHTML = "Humidity: " + weather.list[38].main.humidity + "%";
 
 
     }
