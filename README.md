@@ -31,7 +31,7 @@ THEN I am again presented with current and future conditions for that city
 ## Links
 
 * GitHub: https://github.com/sflores926/Weather-Dashboard
-* Deployed:
+* Deployed: https://sflores926.github.io/Weather-Dashboard/
 
 
 ## Screenshot
