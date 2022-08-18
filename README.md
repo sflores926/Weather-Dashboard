@@ -30,8 +30,10 @@ THEN I am again presented with current and future conditions for that city
 
 ## Links
 
-* GitHub:
+* GitHub: https://github.com/sflores926/Weather-Dashboard
 * Deployed:
 
 
-## Demo
+## Screenshot
+
+![The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for Houston.](./Assets/images/screencapture-file-Users-sflores-Desktop-Weather-Dashboard-index-html-2022-08-18-12_58_50.png)
